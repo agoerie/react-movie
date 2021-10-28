@@ -22,3 +22,13 @@ jobs:
 
       - name: Build production
         run: npm run build
+
+      - name: Publish to Github Packages Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: agoerie/react-movie/react-movie
+          registry: ghcr.io
+          username: ${{ secrets.G_USERNAME }}
+          password: ${{ secrets.G_TOKEN }}
+          dockerfile: Dockerfile
+          tags: latest
