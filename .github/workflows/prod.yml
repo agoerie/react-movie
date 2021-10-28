@@ -35,10 +35,18 @@ jobs:
 
       - name: Deploy to server
         uses: appleboy/ssh-action@master
+        env:
+          GITHUB_USERNAME: ${{ secrets.G_USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.KEY_SERVER }}
           port: ${{ secrets.PORT }}
+          envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
-            mkdir testing
+            cd testing
+            docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
+            docker-compose pull
+            docker-compose up --force-recreate --build -d
+            docker image prune -f
