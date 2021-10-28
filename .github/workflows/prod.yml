@@ -40,4 +40,5 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.KEY_SERVER }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: |
+            mkdir testing
