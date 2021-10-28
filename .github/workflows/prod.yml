@@ -41,4 +41,7 @@ jobs:
           key: ${{ secrets.KEY_SERVER }}
           port: ${{ secrets.PORT }}
           script: |
-            mkdir testing
+            cd web
+            docker-compose pull
+            docker-compose up --force-recreate --build -d
+            docker image prune -f
