@@ -32,3 +32,12 @@ jobs:
           password: ${{ secrets.G_TOKEN }}
           dockerfile: Dockerfile
           tags: latest
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.KEY_SERVER }}
+          port: ${{ secrets.PORT }}
+          script: whoami
