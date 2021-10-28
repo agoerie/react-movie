@@ -1,38 +1,123 @@
-.App {
+body {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  color: #ffffff;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.movie-date,
+.movie-date,
+.movie-rating,
+.movie-overview {
+  color: #ffcc00;
+}
+
+a {
+  color: #ffcc00;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+}
+
+.movie-app {
+  margin: 10px;
+}
+
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+/* Hover & Zoom */
+
+.image-container {
+  /* position: relative; */
+  transition: transform 0.2s;
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 15px;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-container {
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+  background-color: #262626;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+img {
+  width: 10rem;
+  height: 15rem;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  border: 1px solid #ffcc00;
+  box-shadow: #1a1a1a 5px 5px 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* .app-container {
+	margin: 0 auto;
+	padding: 10px;
+} */
+
+h1 {
+  font-size: 1.8rem;
+  text-shadow: #ffcc00 2px 2px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-info {
+  overflow-y: auto;
+  width: 15rem;
+  height: 8rem;
+  margin: 10px;
+}
+
+.form-control {
+  border: 3px solid #ffcc00;
+  width: 20rem;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #ffcc00;
+}
+
+.navbar {
+  background-color: #262626;
+  padding: 15px;
 }
